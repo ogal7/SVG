@@ -5,7 +5,6 @@
 
 var container = document.getElementById("vimage");
 var dvdBtn = document.getElementById("dvd");
-
 var x = container.getAttribute("width")/2;
 var y = container.getAttribute("height")/2;
 console.log(y);
@@ -20,7 +19,7 @@ var ycor = 3;
 //var img = new Image();
 var drawImg = function (xcor, ycor) {
 	var c =	document.createElementNS("http://www.w3.org/2000/svg", "image");
-	c.setAttribute("xlink:href", "/dvd.png");
+	c.setAttribute("href", "dvd.png");
 	console.log("haha");
 	c.setAttribute("x", xcor);
 	c.setAttribute("y", ycor);
@@ -39,7 +38,7 @@ var animateCircle = function() {
 	window.cancelAnimationFrame( reqId );
 
 	var circle = function() {
-		stop()
+		Astop()
 		var c =	document.createElementNS("http://www.w3.org/2000/svg", "circle");
     	c.setAttribute("fill", "pink");
     	c.setAttribute("cx", x);
@@ -70,7 +69,7 @@ var dvd = function() {
 	window.cancelAnimationFrame( reqId );
 
 	var bounceySquare = function () {
-		stop();
+		Astop();
 		//c.clearRect(0,0,canvas.width,canvas.height);
 		//c.beginPath();
 		//c.drawImage(img, xcor, ycor);
@@ -120,9 +119,9 @@ var stopIt = function() {
 
 
 
-var stop = function() {
+var Astop = function() {
 	var list = document.getElementsByTagName("circle");
-	var list2 = document.getElementsByTagName("img");
+	var list2 = document.getElementsByTagName("image");
 	while (list.length != 0) {
 		container.removeChild(list[0]);
 	}
@@ -133,8 +132,8 @@ var stop = function() {
 	//dots = 0;
 	//x = 0;
 	//y = 0;
-	xcor = 0;
-	ycor = 0;
+	//xcor = 0;
+	//ycor = 0;
 }
 
 
